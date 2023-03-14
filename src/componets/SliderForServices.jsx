@@ -8,6 +8,7 @@ import {ourServices, slideImages} from "../data";
 import styled from "styled-components";
 import {Container} from "@mui/material";
 import bgItem from '../images/bg_our_services_item.png'
+import {mobile} from "../responsive";
 
 SwiperCore.use([EffectCoverflow, Autoplay, Pagination]);
 
@@ -80,7 +81,7 @@ const SwipeTitle = styled.h3`
 const SwipeDesc = styled.div`
   width: 100%;
   margin-bottom: 3px;
-  
+  ${mobile({marginTop:"17px", textAlign:"center"})}
 `
 
 

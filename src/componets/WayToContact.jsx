@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import bg from '../images/bussinessMen_bg.png'
+import {mobile} from "../responsive";
 
 const Conteiner = styled.div`
   margin: 0;
@@ -7,10 +8,9 @@ const Conteiner = styled.div`
   background-image: url(${bg});
   background-size: 100%;
   background-position: left;
-  background-repeat: no-repeat;
+  
   background-color: #003C6A;
   position: relative;
-  
 `
 const Wrapper = styled.div`
 
@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   direction: rtl;
   background: linear-gradient(to bottom, #447494, #003C6A 50%);
   opacity: 0.9;
+  ${mobile({gap:"25px"})}
 `
 
 const Title = styled.h3`
@@ -36,6 +37,8 @@ const Title = styled.h3`
   text-align: center;
 
   color: #FFFFFF;
+  ${mobile({width:"100vw",fontSize: '24px' ,lineHeight:"39px", textAlign:"center" })}
+
 `
 
 const ContactButton = styled.button`
@@ -51,6 +54,8 @@ const ContactButton = styled.button`
   &:hover,&:focus {
     transform: scale(1.2);
   }
+  ${mobile({margin: '0' ,height:"40px",width:"120px"})}
+
 `
 
 function WayToContact() {

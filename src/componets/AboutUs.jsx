@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import about_im from '../images/about_us_img.png'
+import {mobile} from "../responsive";
 
 const Conteiner = styled.div`
   margin: 0;
@@ -13,6 +14,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   margin:  70px 0;
+  ${mobile({flexDirection:"column", width: "95%",justifyContent:"center",alignItems:"center"})}
 `
 const Left = styled.div`
   flex: 1;
@@ -22,6 +24,7 @@ const Left = styled.div`
   justify-content: flex-end;
   margin-right: 5px;
   padding-bottom: 15px;
+  ${mobile({gap:"15px",justifyContent:"center",alignItems:"center",width:"90%"})}
 `
 
 const AboutUs = styled.h1`
@@ -34,6 +37,7 @@ const AboutUs = styled.h1`
   /* identical to box height, or 115% */
   text-align: right;
   color: #003C6A;
+  ${mobile({fontSize:"16px", textAlign:"center"})}
 `
 
 const Title = styled.h2`
@@ -48,7 +52,8 @@ const Title = styled.h2`
 
   text-align: right;
 
-  color: #333333;
+  color: #003C6A;
+  ${mobile({fontSize:"33px", textAlign:"center"})}
 `
 const Desc = styled.p`
   font-style: normal;
@@ -60,6 +65,7 @@ const Desc = styled.p`
   text-align: right;
 
   color: #333333;
+  ${mobile({fontSize:"20px", textAlign:"center"})}
 `
 const Button = styled.button`
   
@@ -77,12 +83,14 @@ const Button = styled.button`
   &:hover,&:focus {
     transform: scale(0.9);
   }
+  ${mobile({marginTop:"16px",marginBottom:"16px",height:"40px",width:"110px", textAlign:"center"})}
 `
 
 const Right = styled.div`
   flex: 1;
   display: flex;
   justify-content: flex-start;
+  ${mobile({justifyContent:"center",alignItems:"center" })}
 `
 
 const ImageConteiner = styled.div`
@@ -90,11 +98,12 @@ const ImageConteiner = styled.div`
   height: 100%;
   width: 100%;
   margin-left: 10%;
+  ${mobile({margin:"0"})}
 `
 const Image = styled.img`
   width: 400px;
   height: 400px;
-  
+  ${mobile({width:"100vw", maxHeight:"100%"})}
 `
 
 

@@ -3,6 +3,7 @@
 import styled from "styled-components";
 import SliderForLanguages from "./SliderForLanguages";
 import SliderForServices from "./SliderForServices";
+import {mobile} from "../responsive";
 
 const Conteiner = styled.div`
   margin: 0;
@@ -22,6 +23,9 @@ const Wrapper = styled.div`
   &:hover {
     filter: grayscale(0%);
   }
+  @media (max-width: 500px) {
+    filter: grayscale(0%);
+  }
 `
 
 
@@ -35,6 +39,7 @@ const Title = styled.h1`
   text-align: center;
   /* identical to box height, or 115% */
   color: #003C6A;
+  ${mobile({fontSize:"16px", textAlign:"center"})}
 `
 
 const Title2 = styled.h2`
@@ -50,6 +55,7 @@ const Title2 = styled.h2`
   text-align: center;
 
   color: #003C6A;
+  ${mobile({fontSize:"33px", textAlign:"center"})}
 `
 
 

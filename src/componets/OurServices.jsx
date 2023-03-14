@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Slider} from "@mui/material";
 import SliderForServices from "./SliderForServices";
+import {mobile} from "../responsive";
 
 
 const Conteiner = styled.div`
@@ -14,6 +15,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 80%;
+  ${mobile({margin:" 80px",marginTop:"40px"})}
 `
 const OurServicedTitle = styled.div`
   font-family: 'Roboto', sans-serif;
@@ -26,18 +28,21 @@ const OurServicedTitle = styled.div`
   text-align: center;
 
   color: #FFFFFF;
+  ${mobile({fontSize:"33px", textAlign:"center"})}
 `
 const SubTitle = styled.div`
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 28px;
+  font-size: 18px;
   line-height: 65px;
   /* or 135% */
 
   text-align: center;
 
   color: #FFFFFF;
+  ${mobile({fontSize:"16px", textAlign:"center"})}
+
 `
 
 
@@ -45,6 +50,9 @@ function OurServices() {
     return (
         <Conteiner >
             <Wrapper>
+                <SubTitle>
+                    שירותים
+                </SubTitle>
                 <OurServicedTitle>
                     השירותים שלנו
                 </OurServicedTitle>

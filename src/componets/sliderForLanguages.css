@@ -1,10 +1,14 @@
 
 
 .swiper-slide {
-
-
-
     background: #FFFFFF;
     border: none;
     box-shadow: none;
+}
+
+@media only screen and (max-width: 500px) {
+    #id {
+
+        width:110px;
+    }
 }

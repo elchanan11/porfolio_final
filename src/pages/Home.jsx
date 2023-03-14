@@ -18,14 +18,12 @@ function Home() {
         <Conteiner >
             {/*<NavBar />*/}
             <Intro />
-            {/*<AboutUs />*/}
-            {/*<OurServices />*/}
-            {/*<Porfolio />*/}
-            {/*<WayToContact />*/}
-            {/*<ProgrammingLanguage />*/}
-            {/*<WayToContact />*/}
-            {/*<Contact />*/}
-            {/*<WayToContact />*/}
+            <AboutUs />
+            <OurServices />
+            <Porfolio />
+            <ProgrammingLanguage />
+            <WayToContact />
+            <Contact />
         </Conteiner>
     );
 }

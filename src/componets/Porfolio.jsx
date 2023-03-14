@@ -5,6 +5,7 @@ import sample from '../images/myParty.png'
 import sneakers from '../images/sneakers.png'
 import singer from '../images/singer.png'
 import laptop from '../images/laptop.png'
+import {mobile} from "../responsive";
 
 
 
@@ -25,6 +26,8 @@ const PortfolioTitle = styled.h1`
   font-weight: 400;
   font-size: 48px;
   line-height: 65px;
+  ${mobile({fontSize:"16px", textAlign:"center"})}
+
 `
 const Title = styled.h2`
   font-style: normal;
@@ -32,6 +35,7 @@ const Title = styled.h2`
   font-size: 48px;
   line-height: 65px;
   padding: 0;
+  ${mobile({fontSize:"33px", textAlign:"center"})}
 `
 
 const ProjectsWrapper = styled.div`
@@ -40,6 +44,10 @@ const ProjectsWrapper = styled.div`
   justify-content: space-between;
   padding: 15px;
   background: linear-gradient(to bottom, white 60%, #447494);
+  @media (max-width: 500px) {
+    background: linear-gradient(to bottom, white , #003C6A 65%);
+  }
+  ${mobile({flexDirection:"column", textAlign:"center"})}
 `
 
 const ProjectWrapper = styled.div`

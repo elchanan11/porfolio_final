@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {mobile} from "../responsive";
 
 
 const Conteiner = styled.div`
@@ -31,6 +32,7 @@ const Tilte1 = styled.h1`
   line-height: 40px;
   /* identical to box height */
   color: #003C6A;
+  ${mobile({fontSize:"16px", textAlign:"center"})}
 `
 
 const Title2 = styled.h2`
@@ -43,6 +45,7 @@ const Title2 = styled.h2`
 
 
   color: #003C6A;
+  ${mobile({fontSize:"40px", textAlign:"center"})}
 `
 
 const InputConteiner = styled.div`
@@ -52,19 +55,7 @@ const InputConteiner = styled.div`
   align-items: center;
   direction: rtl;
   gap: 18px;
-`
-
-const DetailsConteiner = styled.div`
-  display: flex;
-  flex: 1;
-  align-items: flex-end;
-  flex-direction: column;
-`
-const TextConteiner = styled.div`
-  display: flex;
-  flex: 1;
-  align-items: flex-start;
-  justify-content: center;
+  
 `
 
 const Name = styled.input`
@@ -77,6 +68,7 @@ const Name = styled.input`
   font-size: 22px;
   background: rgba(217, 217, 217, 0.2);
   border: none;
+  ${mobile({width:"85%"})}
 `
 
 const Number = styled.input`
@@ -89,6 +81,7 @@ const Number = styled.input`
   font-size: 20px;
   background: rgba(217, 217, 217, 0.2);
   border: none;
+  ${mobile({width:"85%"})}
 `
 
 const Text = styled.textarea`
@@ -101,6 +94,7 @@ const Text = styled.textarea`
   padding: 10px;
   background: rgba(217, 217, 217, 0.2);
   border: none;
+  ${mobile({width:"85%"})}
 `
 
 const Button = styled.button`
@@ -116,6 +110,7 @@ const Button = styled.button`
   &:hover,&:focus {
     transform: scale(1.1);
   }
+  ${mobile({width:"85%"})}
 `
 
 function Contact() {
@@ -130,7 +125,7 @@ function Contact() {
                         צור עימנו קשר
                     </Title2>
                 </TitleConteiner>
-                <form>
+                <form style={{width:"100%"}}>
                     <InputConteiner>
                         <Name required type={"name"} placeholder={"שם מלא"} />
                         <Number required type={"tel"} placeholder={"מספר טלפון"} />

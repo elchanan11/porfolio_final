@@ -53,7 +53,7 @@ const SliderForServices = () => {
                 {/* using array */}
                 {languages.map((swipeItem, i) => {
                     return (
-                        <SwiperSlide key={i}>
+                        <SwiperSlide id={"id"} key={i} >
 
                                         <SwipeImage src={swipeItem.img} alt={swipeItem.desc} />
                         </SwiperSlide>
