@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0758cea6.css",
+    "main.js": "/static/js/main.8f82a8fa.js",
+    "static/media/bussinessMen_bg.png": "/static/media/bussinessMen_bg.4c3ff29a3d29556c0680.png",
+    "static/media/sneakers.png": "/static/media/sneakers.fe761331477f63576e03.png",
+    "static/media/singer.png": "/static/media/singer.6d207444022f1c8ffc3e.png",
+    "static/media/myParty.png": "/static/media/myParty.0f92a704e539ccdff3c1.png",
+    "static/media/intro_im.png": "/static/media/intro_im.5e8d5c88e6088cc3bedd.png",
+    "static/media/about_us_img.png": "/static/media/about_us_img.435b32219124974b8d36.png",
+    "static/media/laptop.png": "/static/media/laptop.a8f60f3628e1c573f176.png",
+    "static/media/locked.png": "/static/media/locked.a284357417b9b294361e.png",
+    "static/media/python.png": "/static/media/python.6a5cbc319ab3ddf8ef92.png",
+    "static/media/phone.png": "/static/media/phone.a68cc1db03a36fc5a123.png",
+    "static/media/mysql.png": "/static/media/mysql.bdbd1eb709e4c13258d2.png",
+    "static/media/nodejs.png": "/static/media/nodejs.007e99f68b718e476aba.png",
+    "static/media/c.png": "/static/media/c.24a8f93854ab092f17a7.png",
+    "static/media/mobile-app.png": "/static/media/mobile-app.ce420278c278abdec2e0.png",
+    "static/media/intro_bg.png": "/static/media/intro_bg.354f7fd30d42a213d890.png",
+    "static/media/logo.png": "/static/media/logo.ed2e09a8ed02fdcc9ae6.png",
+    "static/media/optimize.png": "/static/media/optimize.f36d9cff8b44c46ff190.png",
+    "static/media/react.png": "/static/media/react.20179337793bcef6a7d4.png",
+    "static/media/java.png": "/static/media/java.f5dd86c3ef6ef3f85acf.png",
+    "static/media/cms .png": "/static/media/cms .05e51d7a6c70416463dd.png",
+    "static/media/api.png": "/static/media/api.fd15d37b0d15804b17b0.png",
+    "static/media/bg_im_for mobile.png": "/static/media/bg_im_for mobile.763c0cc67692cd51394a.png",
+    "static/media/html.png": "/static/media/html.e01be27ef747bd78df6a.png",
+    "index.html": "/index.html",
+    "main.0758cea6.css.map": "/static/css/main.0758cea6.css.map",
+    "main.8f82a8fa.js.map": "/static/js/main.8f82a8fa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0758cea6.css",
+    "static/js/main.8f82a8fa.js"
+  ]
+}
