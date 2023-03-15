@@ -19,30 +19,43 @@ import nodejs from '../src/lunguagesIcon/nodejs.png'
 import mysql from '../src/lunguagesIcon/mysql.png'
 
 
+import home from '../src/navbarIcons/home.png'
+import contactUs from '../src/navbarIcons/contactUs.png'
+import aboutUs from '../src/navbarIcons/aboutUs.png'
+import priviousJobs from '../src/navbarIcons/priviousJobs.png'
+import services from '../src/navbarIcons/services.png'
+
+
 export const categories = [
     {
         id:1,
-        title:"בית"
+        title:"בית",
+        icon:home
     },
     {
         id:2,
-        title:"עלינו"
+        title:"עלינו",
+        icon:aboutUs
     },
     {
         id:3,
-        title:"שירותים"
+        title:"שירותים",
+        icon:services
     },
     {
         id:4,
-        title:"תיק עבודות"
+        title:"בנינו לאחרונה",
+        icon:priviousJobs
     },
-    {
-        id:5,
-        title:"המלצות"
-    },
+    // {
+    //     id:5,
+    //     title:"המלצות",
+    //         icon:home
+    // },
     {
         id:6,
-        title:"צור קשר"
+        title:"צור קשר",
+        icon:contactUs
     },
 ]
 

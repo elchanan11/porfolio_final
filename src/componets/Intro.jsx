@@ -3,12 +3,13 @@ import bgIntro from '../images/intro_bg.png'
 import introImg from '../images/intro_im.png'
 import bgintroMobileImg from '../images/bg_im_for mobile.png'
 import {Mail, WhatsApp} from "@mui/icons-material";
-import {mobile} from "../responsive";
+import {leptop, mobile} from "../responsive";
 
 
 const Conteiner = styled.div`
   margin: 0;
   padding: 0;
+  ${leptop({paddingTop:"90px"})}
 `
 const Wrapper = styled.div`
   width: 100%;
@@ -165,25 +166,27 @@ const IconConteiner = styled.div`
   bottom: 10px;
   left: -2px;
   transform: translateY(-50%);
-  z-index: 100;
+  z-index: 99;
   
   ${mobile({display:"none"})}
 `
 const IconItem = styled.div`
-  font-size: 14px;
+  font-size: 10px;
   display: flex;
   align-items: center;
   border-radius: 50%;
+  margin-left: 10px;
   padding: 7px;
   padding-right: 0;
   padding-top: 0;
   background-color: inherit;
   justify-content: space-between;
+  transform: scale(1.4);
   cursor: pointer;
   margin-right: 7px;
   transition: transform 0.2s ease-in-out;
   &:hover,&:focus {
-    transform: scale(1.2);
+    transform: scale(1.7);
   }
 `
 

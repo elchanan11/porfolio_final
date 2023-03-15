@@ -7,6 +7,7 @@ import Porfolio from "../componets/Porfolio";
 import WayToContact from "../componets/WayToContact";
 import ProgrammingLanguage from "../componets/ProgrammingLanguage";
 import Contact from "../componets/Contact";
+import Footer from "../componets/Footer";
 
 const Conteiner = styled.div`
   margin: 0;
@@ -16,14 +17,15 @@ const Conteiner = styled.div`
 function Home() {
     return (
         <Conteiner >
-            {/*<NavBar />*/}
+            <NavBar />
             <Intro />
-            <AboutUs />
+            <AboutUs id={"aboutUs"}/>
             <OurServices />
             <Porfolio />
             <ProgrammingLanguage />
             <WayToContact />
             <Contact />
+            <Footer />
         </Conteiner>
     );
 }

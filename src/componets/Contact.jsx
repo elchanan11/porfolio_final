@@ -68,6 +68,11 @@ const Name = styled.input`
   font-size: 22px;
   background: rgba(217, 217, 217, 0.2);
   border: none;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover,&:focus {
+    transform: scale(1.1);
+  }
   ${mobile({width:"85%"})}
 `
 
@@ -81,6 +86,11 @@ const Number = styled.input`
   font-size: 20px;
   background: rgba(217, 217, 217, 0.2);
   border: none;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover,&:focus {
+    transform: scale(1.1);
+  }
   ${mobile({width:"85%"})}
 `
 
@@ -94,6 +104,11 @@ const Text = styled.textarea`
   padding: 10px;
   background: rgba(217, 217, 217, 0.2);
   border: none;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover,&:focus {
+    transform: scale(1.1);
+  }
   ${mobile({width:"85%"})}
 `
 
