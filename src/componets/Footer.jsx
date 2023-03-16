@@ -154,7 +154,7 @@ const MiddleLink = styled.div`
   /* or 219% */
   text-align: right;
   text-decoration: underline #FFFFFF 1px;
-
+  background-color: #003C6A;
   color: #FFFFFF;
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
@@ -226,8 +226,8 @@ function Footer() {
                                 <a
                                     aria-label={'call the developer'}
                                     tabIndex={'0'}
-                                    style={{color:"#fff"}}
                                     href="tel:+972539323849"
+                                    style={{color:"#fff",display:"flex",justifyContent:"center",alignItems:"center"}}
                                 >
                                     <CallIcon fontSize={"large"} />
                                 </a>
@@ -235,7 +235,7 @@ function Footer() {
                         </IconConteiner>
                         <IconConteiner>
                             <Icon>
-                                <a style={{color:"#fff"}} href="mailto:elchanan.elsner@gmail.com" aria-label={'לחץ לשליחת אימייל אלינו'}>
+                                <a style={{color:"#fff",display:"flex",justifyContent:"center",alignItems:"center"}} href="mailto:elchanan.elsner@gmail.com" aria-label={'לחץ לשליחת אימייל אלינו'}>
                                     <Mail  fontSize={"large"} />
                                 </a>
                             </Icon>

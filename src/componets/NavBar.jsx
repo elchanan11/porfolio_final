@@ -5,6 +5,7 @@ import {leptop, mobile} from "../responsive";
 import {Icon, IconButton} from '@mui/material';
 import {Element, Link} from "react-scroll";
 import SliderForServices from "./SliderForServices";
+import {useState} from "react";
 
 const Conteiner = styled.div`
   margin: 0;
@@ -91,7 +92,7 @@ const MobileCategoryItem = styled.div`
   background-color: #003C6A;
   transition: all 0.2s ease-out;
   &:hover,&:focus {
-    scale: 1.1;
+    scale: 1.3;
     background-color: #306387;
   }
   
@@ -124,6 +125,9 @@ const Logo = styled.img`
 `
 
 function NavBar() {
+
+    const [hover, setHover] = useState(false);
+
     return (
         <Conteiner >
             <Wrapper>
@@ -151,6 +155,7 @@ function NavBar() {
                                     offset={-70}
                                     duration={500}
                                     key={category.id}
+                                    style={{backgroundColor:"#fff"}}
                                 >
                                     <CategoryItem >
                                         {
@@ -172,6 +177,7 @@ function NavBar() {
                             offset={-70}
                             duration={500}
                             key={category.id}
+                            style={{backgroundColor:"#fff"}}
                             >
                                 <MobileCategoryItem >
                                     {

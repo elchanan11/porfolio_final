@@ -2,6 +2,9 @@ import styled from "styled-components";
 import about_im from '../images/about_us_img.png'
 import {mobile} from "../responsive";
 import {Element, Link} from "react-scroll";
+import {useEffect, useRef, useState} from "react";
+import './animation.css'
+import {handleAnimation} from "./animations";
 
 const Conteiner = styled.div`
   margin: 0;
@@ -110,6 +113,19 @@ const Image = styled.img`
 
 
 function Home() {
+    /////////////////////////////////////Animations/////////////////////////////////
+    const myComponentRef = useRef(null);
+
+    useEffect(() => {
+        const cleanup = handleAnimation(myComponentRef, 'flipX');
+
+        return () => {
+            cleanup();
+        };
+    }, []);
+/////////////////////////////////////Animations/////////////////////////////////
+
+
     return (
         <Conteiner >
             <Wrapper>
@@ -119,7 +135,9 @@ function Home() {
                             עלינו
                         </AboutUs>
                     </Element>
-                    <Title>
+                    <Title id="my-component"
+                           ref={myComponentRef}
+                          >
                           מה זה Webel ?
                     </Title>
                     <Desc>

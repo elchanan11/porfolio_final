@@ -5,6 +5,10 @@ import bgintroMobileImg from '../images/bg_im_for mobile.png'
 import {Mail, WhatsApp} from "@mui/icons-material";
 import {leptop, mobile} from "../responsive";
 import {Link} from "react-scroll";
+import './animation.css'
+import {useEffect, useState} from "react";
+import {useRef} from "react";
+import {handleAnimation} from "./animations";
 
 
 const Conteiner = styled.div`
@@ -197,6 +201,18 @@ const IconItem = styled.div`
 
 
 function Intro() {
+    /////////////////////////////////////Animations/////////////////////////////////
+    const myComponentRef = useRef(null);
+
+    useEffect(() => {
+        const cleanup = handleAnimation(myComponentRef, 'flipX');
+
+        return () => {
+            cleanup();
+        };
+    }, []);
+/////////////////////////////////////Animations/////////////////////////////////
+
     return (
         <Conteiner >
             <Wrapper>
@@ -223,7 +239,9 @@ function Intro() {
                         <Text1>
                             הגיע הזמן להתקדם
                         </Text1>
-                        <Text2>
+                        <Text2
+                            ref={myComponentRef}
+                        >
                             {/*גלה את העוצמה בפיתוח אתר מותאם אישית לעסק שלך.                        */}
                             בנה את אתר החלומות שלך עם העזרה שלנו
                         </Text2>

@@ -4,6 +4,9 @@ import SliderForServices from "./SliderForServices";
 import {Element} from "react-scroll";
 import {useState} from "react";
 import {useForm, ValidationError} from "@formspree/react";
+import {useEffect, useRef} from "react";
+import {handleAnimation} from "./animations";
+import './animation.css'
 
 
 const Conteiner = styled.div`
@@ -135,7 +138,7 @@ const Button = styled.button`
 
 const SubmittedConteiner = styled.div`
   width: 100%;
-  height: 100%;
+  height: 60vh;
  direction: rtl;
   display: flex;
   flex-direction: column;
@@ -162,6 +165,18 @@ const SubmittedSubTitle = styled.h2`
 
 
 function Contact() {
+    /////////////////////////////////////Animations/////////////////////////////////
+    const myComponentRef = useRef(null);
+
+    useEffect(() => {
+        const cleanup = handleAnimation(myComponentRef, 'flipX');
+
+        return () => {
+            cleanup();
+        };
+    }, []);
+/////////////////////////////////////Animations/////////////////////////////////
+
     const [formData, setFormData] = useState({ name: '', tel: '', message: '' });
 
     const handleInputChange = (event) => {
@@ -171,17 +186,19 @@ function Contact() {
     const [state, handleSubmit] = useForm("mrgvlvbv");
     if (state.succeeded) {
         return (
-            <SubmittedConteiner>
-                <SubmittedText>
-                    עוד צעד בדרך אל ההצלחה
-                </SubmittedText>
-                <SubmittedTitle>
-                    הטופס נשלח בהצלחה!
-                </SubmittedTitle>
-                <SubmittedSubTitle>
-                    ניצור עמכם קשר בהקדם האפשרי.
-                </SubmittedSubTitle>
-            </SubmittedConteiner>
+            <Element name="צור קשר">
+                <SubmittedConteiner>
+                    <SubmittedText>
+                        צעד ענק בדרך אל ההצלחה
+                    </SubmittedText>
+                    <SubmittedTitle>
+                        הטופס נשלח בהצלחה!
+                    </SubmittedTitle>
+                    <SubmittedSubTitle>
+                        ניצור עמכם קשר בהקדם האפשרי
+                    </SubmittedSubTitle>
+                </SubmittedConteiner>
+            </Element>
         )
 
     }
@@ -194,7 +211,9 @@ function Contact() {
                         <Tilte1>
                             צור קשר
                         </Tilte1>
-                        <Title2>
+                        <Title2
+                            ref={myComponentRef}
+                        >
                             בואו נתקדם !
                         </Title2>
                     </TitleConteiner>
@@ -206,10 +225,10 @@ function Contact() {
                                 field="name"
                                 errors={state.errors}
                             />
-                            <Number required id={"phone"}  type={"phone"} placeholder={"מספר טלפון"} />
+                            <Number required id={"tel"}  type={"phone"} placeholder={"מספר טלפון"} />
                             <ValidationError
-                                prefix="Phone"
-                                field="phone"
+                                prefix="Tel"
+                                field="tel"
                                 errors={state.errors}
                             />
                             <Text id={"message"} type={"message"} placeholder={"על מה נדבר ?"} name="message" />
@@ -218,7 +237,7 @@ function Contact() {
                                 field="message"
                                 errors={state.errors}
                             />
-                            <Button type="submit" disabled={state.submitting}>
+                            <Button type="submit" disabled={state.submitting} >
                                 שליחה
                             </Button>
                         </InputConteiner>
