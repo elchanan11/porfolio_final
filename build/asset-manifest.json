@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0758cea6.css",
-    "main.js": "/static/js/main.fece1672.js",
+    "main.js": "/static/js/main.d9668ecb.js",
     "static/media/bussinessMen_bg.png": "/static/media/bussinessMen_bg.4c3ff29a3d29556c0680.png",
     "static/media/sneakers.png": "/static/media/sneakers.fe761331477f63576e03.png",
     "static/media/singer.png": "/static/media/singer.6d207444022f1c8ffc3e.png",
@@ -29,10 +29,10 @@
     "static/media/html.png": "/static/media/html.e01be27ef747bd78df6a.png",
     "index.html": "/index.html",
     "main.0758cea6.css.map": "/static/css/main.0758cea6.css.map",
-    "main.fece1672.js.map": "/static/js/main.fece1672.js.map"
+    "main.d9668ecb.js.map": "/static/js/main.d9668ecb.js.map"
   },
   "entrypoints": [
     "static/css/main.0758cea6.css",
-    "static/js/main.fece1672.js"
+    "static/js/main.d9668ecb.js"
   ]
 }
