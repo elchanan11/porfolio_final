@@ -3,7 +3,9 @@ import logo from '../images/logo.png'
 import {categories} from "../data";
 import {leptop, mobile} from "../responsive";
 import {Icon, IconButton} from '@mui/material';
-import {Link} from "react-router-dom";
+import {Element, Link} from "react-scroll";
+import SliderForServices from "./SliderForServices";
+
 const Conteiner = styled.div`
   margin: 0;
   padding: 0;
@@ -60,7 +62,7 @@ const CategoryItem = styled.button`
   /* identical to box height */
   color: black;
 
-  &:hover {
+  &:hover,&:focus {
     scale: 1.1;
     color: #003C6A;
   }
@@ -125,29 +127,58 @@ function NavBar() {
     return (
         <Conteiner >
             <Wrapper>
-                <Left >
-                    <Logo src={logo} alt={"תמונת לוגו"} />
-                </Left>
+                <Link
+                    activeClass="active"
+                    to={"בית"}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                >
+                    <Left >
+                        <Logo src={logo} alt={"תמונת לוגו"} />
+                    </Left>
+                </Link>
                 <Right>
                     <CategoryContainer>
                         {
                             categories.map(category=>
-                                <CategoryItem key={category.id}>
-                                    {
-                                        category.title
-                                    }
-                                </CategoryItem>
+                                <Link
+                                    activeClass="active"
+                                    to={category.title}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration={500}
+                                    key={category.id}
+                                >
+                                    <CategoryItem >
+                                        {
+                                            category.title
+                                        }
+                                    </CategoryItem>
+                                </Link>
                             )
                         }
                     </CategoryContainer>
                     <MobileCategoryContainer>
                         {
                             categories.map(category=>
-                                <MobileCategoryItem key={category.id}>
+                            <Link
+                            activeClass="active"
+                            to={category.title}
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                            key={category.id}
+                            >
+                                <MobileCategoryItem >
                                     {
                                         <IconButton style={{color:"white"}}>{category.icon}</IconButton>
                                     }
                                 </MobileCategoryItem>
+                            </Link>
                             )
                         }
                     </MobileCategoryContainer>

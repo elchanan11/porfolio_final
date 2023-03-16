@@ -5,6 +5,9 @@ import {categories} from "../data";
 import logo1 from '../images/logoFooter.png'
 import logo2 from '../images/Dark Logo (1).png'
 import {leptop, mobile} from "../responsive";
+import {IconButton} from "@mui/material";
+import {Link} from "react-scroll";
+import logo from "../images/logo.png";
 
 const Conteiner = styled.div`
   margin: 0;
@@ -143,7 +146,7 @@ const MiddleLinkTitle = styled.h2`
 
   color: #FFFFFF;
 `
-const MiddleLink = styled.a`
+const MiddleLink = styled.div`
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -219,17 +222,31 @@ function Footer() {
                 <Top>
                     <Icons>
                         <IconConteiner>
-                            <Icon>
-                                <CallIcon fontSize={"large"} />
+                            <Icon >
+                                <a
+                                    aria-label={'call the developer'}
+                                    tabIndex={'0'}
+                                    style={{color:"#fff"}}
+                                    href="tel:+972539323849"
+                                >
+                                    <CallIcon fontSize={"large"} />
+                                </a>
                             </Icon>
                         </IconConteiner>
                         <IconConteiner>
                             <Icon>
-                                <Mail  fontSize={"large"} />
+                                <a style={{color:"#fff"}} href="mailto:elchanan.elsner@gmail.com" aria-label={'לחץ לשליחת אימייל אלינו'}>
+                                    <Mail  fontSize={"large"} />
+                                </a>
                             </Icon>
                         </IconConteiner>
                         <IconConteiner>
-                            <Icon>
+                            <Icon
+                                onClick={()=>{
+                                    let url = `https://wa.me/message/2Y5CTJJNWWN4E1`;
+
+                                    window.open(url);}}
+                            >
                                 <WhatsApp  fontSize={"large"} />
                             </Icon>
                         </IconConteiner>
@@ -245,42 +262,86 @@ function Footer() {
                             <MiddleLinksConteiner>
                                 {
                                     categories.map(category=>
-                                        <MiddleLink key={category.id}>
-                                            {
-                                                category.title
-                                            }
-                                        </MiddleLink>
+                                        <Link
+                                            activeClass="active"
+                                            to={category.title}
+                                            spy={true}
+                                            smooth={true}
+                                            offset={-70}
+                                            duration={500}
+                                            key={category.id}
+                                        >
+                                            <MiddleLink >
+                                                {
+                                                    category.title
+                                                }
+                                            </MiddleLink>
+                                        </Link>
                                     )
                                 }
                             </MiddleLinksConteiner>
                         </MiddleLeft>
                         <MiddleRight>
-                            <MiddleLogoConteiner>
-                                <MiddleLogo src={logo2} alt={"תמונת לוגו"}/>
-                            </MiddleLogoConteiner>
+                            <Link
+                                activeClass="active"
+                                to={"בית"}
+                                spy={true}
+                                smooth={true}
+                                offset={-70}
+                                duration={500}
+                            >
+                                <MiddleLogoConteiner>
+                                    <MiddleLogo src={logo2} alt={"תמונת לוגו"}/>
+                                </MiddleLogoConteiner>
+                            </Link>
                             <MiddleText>
                                 , נשמע קצת דפוק, אבל כל המילים האלו הם פשוט מילים אקראיות בעברית שכתבתי בלי שום משמעות מיוחדת.
                             </MiddleText>
                         </MiddleRight>
                         <MobileMiddleLogoConteiner>
-                            <MobileMiddleLogo src={logo2} alt={"תמונת לוגו"}/>
+                            <Link
+                                activeClass="active"
+                                to={"בית"}
+                                spy={true}
+                                smooth={true}
+                                offset={-70}
+                                duration={500}
+                            >
+
+                                <MobileMiddleLogo src={logo2} alt={"תמונת לוגו"}/>
+
+                            </Link>
                         </MobileMiddleLogoConteiner>
                     </MiiddleWrapper>
                 </Miiddle>
                 <Bottom>
                     <SocialIcons>
                         <SocialIconConteiner>
-                            <SocialIcon>
+                            <SocialIcon
+                                onClick={()=>{
+                                    let url = `https://www.facebook.com/profile.php?id=100089614880027&mibextid=LQQJ4d`;
+
+                                    window.open(url);}}
+                            >
                                 <Facebook />
                             </SocialIcon>
                         </SocialIconConteiner>
                         <SocialIconConteiner>
-                            <SocialIcon>
+                            <SocialIcon
+                                onClick={()=>{
+                                    let url = `https://github.com/elchanan11`;
+
+                                    window.open(url);}}
+                            >
                                 <GitHub />
                             </SocialIcon>
                         </SocialIconConteiner>
                         <SocialIconConteiner>
-                            <SocialIcon>
+                            <SocialIcon
+                                onClick={()=>{
+                                let url = `https://wa.me/message/2Y5CTJJNWWN4E1`;
+
+                                window.open(url);}}>
                                 <WhatsApp />
                             </SocialIcon>
                         </SocialIconConteiner>

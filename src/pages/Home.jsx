@@ -8,7 +8,7 @@ import WayToContact from "../componets/WayToContact";
 import ProgrammingLanguage from "../componets/ProgrammingLanguage";
 import Contact from "../componets/Contact";
 import Footer from "../componets/Footer";
-
+import { Link as ScrollLink, Element } from 'react-scroll';
 const Conteiner = styled.div`
   margin: 0;
   padding: 0;
@@ -18,8 +18,10 @@ function Home() {
     return (
         <Conteiner >
             <NavBar />
-            <Intro />
-            <AboutUs id={"aboutUs"}/>
+            <Element name={"בית"}>
+                <Intro />
+            </Element>
+            <AboutUs />
             <OurServices />
             <Porfolio />
             <ProgrammingLanguage />

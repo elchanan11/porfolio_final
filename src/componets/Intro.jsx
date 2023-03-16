@@ -4,6 +4,7 @@ import introImg from '../images/intro_im.png'
 import bgintroMobileImg from '../images/bg_im_for mobile.png'
 import {Mail, WhatsApp} from "@mui/icons-material";
 import {leptop, mobile} from "../responsive";
+import {Link} from "react-scroll";
 
 
 const Conteiner = styled.div`
@@ -202,7 +203,12 @@ function Intro() {
                 <Left>
                     <IconConteiner>
                         <IconItem>
-                            <WhatsApp fontSize={"large"} style={{color:"green"}}  />
+                            <WhatsApp fontSize={"large"} style={{color:"green"}}
+                                      onClick={()=>{
+                                          let url = `https://wa.me/message/2Y5CTJJNWWN4E1`;
+
+                                          window.open(url);}}
+                            />
                         </IconItem>
                         {/*<IconItem>*/}
                         {/*    <Mail fontSize={"large"} style={{color:"orange"}}  />*/}
@@ -223,12 +229,31 @@ function Intro() {
                         </Text2>
                     </TextConteiner>
                     <ButtonConteiner>
-                        <ButtonContact>
-                            צור קשר
-                        </ButtonContact>
-                        <ButtonLetsStart>
-                            בוא נתחיל
-                        </ButtonLetsStart>
+                        <Link
+                            activeClass="active"
+                            to={"צור קשר"}
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                        >
+                            <ButtonContact>
+                                צור קשר
+                            </ButtonContact>
+                        </Link>
+
+                        <Link
+                            activeClass="active"
+                            to={"עלינו"}
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                        >
+                            <ButtonLetsStart>
+                                בוא נתחיל
+                            </ButtonLetsStart>
+                        </Link>
                     </ButtonConteiner>
                 </Right>
             </Wrapper>

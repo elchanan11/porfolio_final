@@ -6,6 +6,8 @@ import sneakers from '../images/sneakers.png'
 import singer from '../images/singer.png'
 import laptop from '../images/laptop.png'
 import {mobile} from "../responsive";
+import SliderForServices from "./SliderForServices";
+import {Element} from "react-scroll";
 
 
 
@@ -76,33 +78,35 @@ const ProjectImage = styled.img`
 
 function Portfolio() {
     return (
-        <Conteiner >
-            <TitleContenieer>
-                <PortfolioTitle>
-                    פורטפוליו
-                </PortfolioTitle>
-                <Title>
-                    טעימה קטנה :)
-                </Title>
-            </TitleContenieer>
-            <ProjectsWrapper>
-                <ProjectWrapper>
-                    <ProjectImageConteiner>
-                        <ProjectImage src={sample}/>
-                    </ProjectImageConteiner>
-                </ProjectWrapper>
-                <ProjectWrapper>
-                    <ProjectImageConteiner>
-                        <ProjectImage src={sneakers}/>
-                    </ProjectImageConteiner>
-                </ProjectWrapper>
-                <ProjectWrapper>
-                    <ProjectImageConteiner>
-                        <ProjectImage src={singer}/>
-                    </ProjectImageConteiner>
-                </ProjectWrapper>
-            </ProjectsWrapper>
-        </Conteiner>
+        <Element name="בנינו לאחרונה">
+            <Conteiner >
+                <TitleContenieer>
+                    <PortfolioTitle>
+                        פורטפוליו
+                    </PortfolioTitle>
+                    <Title>
+                        טעימה קטנה :)
+                    </Title>
+                </TitleContenieer>
+                <ProjectsWrapper>
+                    <ProjectWrapper>
+                        <ProjectImageConteiner>
+                            <ProjectImage src={sample}/>
+                        </ProjectImageConteiner>
+                    </ProjectWrapper>
+                    <ProjectWrapper>
+                        <ProjectImageConteiner>
+                            <ProjectImage src={sneakers}/>
+                        </ProjectImageConteiner>
+                    </ProjectWrapper>
+                    <ProjectWrapper>
+                        <ProjectImageConteiner>
+                            <ProjectImage src={singer}/>
+                        </ProjectImageConteiner>
+                    </ProjectWrapper>
+                </ProjectsWrapper>
+            </Conteiner>
+        </Element>
     );
 }
 

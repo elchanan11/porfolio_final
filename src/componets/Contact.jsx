@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import {mobile} from "../responsive";
+import SliderForServices from "./SliderForServices";
+import {Element} from "react-scroll";
 
 
 const Conteiner = styled.div`
@@ -131,31 +133,33 @@ const Button = styled.button`
 
 function Contact() {
     return (
-        <Conteiner >
-            <Wrapper>
-                <TitleConteiner>
-                    <Tilte1>
-                        צור קשר
-                    </Tilte1>
-                    <Title2>
-                        בואו נתקדם !
-                    </Title2>
-                </TitleConteiner>
-                <form style={{width:"100%"}}>
-                    <InputConteiner>
-                        <Name required type={"name"} placeholder={"שם מלא"} />
-                        <Number required type={"tel"} placeholder={"מספר טלפון"} />
-                        <Text type={"text"} placeholder={"על מה נדבר ?"} />
+        <Element name="צור קשר">
+            <Conteiner >
+                <Wrapper>
+                    <TitleConteiner>
+                        <Tilte1>
+                            צור קשר
+                        </Tilte1>
+                        <Title2>
+                            בואו נתקדם !
+                        </Title2>
+                    </TitleConteiner>
+                    <form style={{width:"100%"}}>
+                        <InputConteiner>
+                            <Name required type={"name"} placeholder={"שם מלא"} />
+                            <Number required type={"tel"} placeholder={"מספר טלפון"} />
+                            <Text type={"text"} placeholder={"על מה נדבר ?"} />
 
-                        <Button>
-                            שליחה
-                        </Button>
-                    </InputConteiner>
+                            <Button>
+                                שליחה
+                            </Button>
+                        </InputConteiner>
 
-                </form>
-            </Wrapper>
+                    </form>
+                </Wrapper>
 
-        </Conteiner>
+            </Conteiner>
+        </Element>
     );
 }
 

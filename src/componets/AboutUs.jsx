@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import about_im from '../images/about_us_img.png'
 import {mobile} from "../responsive";
+import {Element, Link} from "react-scroll";
 
 const Conteiner = styled.div`
   margin: 0;
@@ -113,17 +114,28 @@ function Home() {
         <Conteiner >
             <Wrapper>
                 <Left>
-                    <AboutUs>
-                        עלינו
-                    </AboutUs>
+                    <Element name="עלינו">
+                        <AboutUs>
+                            עלינו
+                        </AboutUs>
+                    </Element>
                     <Title>
                           מה זה Webel ?
                     </Title>
                     <Desc>
                         Webel הוקמה על ידי מפתח ומעצב אתרים נלהב שאהב את התעשייה מאז ילדותו. התשוקה שלנו היא ליצור אתרי אינטרנט יפים ומקצועיים אשר עולים על ציפיות הלקוחות שלנו. אנו עובדים בשיתוף פעולה הדוק עם כל לקוח כדי להבין את הצרכים והמטרות הייחודיות שלו, ולאחר מכן מתאימים את השירותים שלנו בהתאם. בין אם אתה בעל עסק קטן או תאגיד גדול, אנו מחויבים לספק שירות אמין,מקצועי ואישי העונה על הצרכים הספציפיים שלך. ב-Webel, ההתמקדות שלנו היא תמיד במתן הרמה הגבוהה ביותר של איכות ושביעות רצון הלקוחות. אנו מאמינים בבניית קשרים ארוכי טווח עם לקוחותינו, ואנו מחויבים לעזור להם להשיג את המטרות המקוונות שלהם.                    </Desc>
-                    <Button>
-                        בואו נתקדם !
-                    </Button>
+                    <Link
+                        activeClass="active"
+                        to={"צור קשר"}
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}
+                    >
+                        <Button>
+                            בואו נתקדם !
+                        </Button>
+                    </Link>
                 </Left>
                 <Right>
                     <ImageConteiner>

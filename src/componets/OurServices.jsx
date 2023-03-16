@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {Slider} from "@mui/material";
 import SliderForServices from "./SliderForServices";
 import {mobile} from "../responsive";
+import {Element} from "react-scroll";
 
 
 const Conteiner = styled.div`
@@ -48,17 +49,19 @@ const SubTitle = styled.div`
 
 function OurServices() {
     return (
-        <Conteiner >
-            <Wrapper>
-                <SubTitle>
-                    שירותים
-                </SubTitle>
-                <OurServicedTitle>
-                    השירותים שלנו
-                </OurServicedTitle>
-                <SliderForServices />
-            </Wrapper>
-        </Conteiner>
+        <Element name="שירותים">
+            <Conteiner >
+                <Wrapper>
+                    <SubTitle>
+                        שירותים
+                    </SubTitle>
+                    <OurServicedTitle>
+                        השירותים שלנו
+                    </OurServicedTitle>
+                    <SliderForServices />
+                </Wrapper>
+            </Conteiner>
+        </Element>
     );
 }
 

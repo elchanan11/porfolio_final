@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import bg from '../images/bussinessMen_bg.png'
 import {mobile} from "../responsive";
+import {Element, Link} from "react-scroll";
 
 const Conteiner = styled.div`
   margin: 0;
@@ -68,9 +69,18 @@ function WayToContact() {
                     <br/>
                     אה, וזה חינם :)
                 </Title>
-                <ContactButton>
-                    צור קשר
-                </ContactButton>
+               < Link
+                activeClass="active"
+                to={"צור קשר"}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                >
+                   <ContactButton>
+                       צור קשר
+                   </ContactButton>
+            </Link>
             </Wrapper>
         </Conteiner>
     );
