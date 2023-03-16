@@ -4,7 +4,7 @@ import {mobile} from "../responsive";
 import {Element, Link} from "react-scroll";
 import {useEffect, useRef, useState} from "react";
 import './animation.css'
-import {handleAnimation} from "./animations";
+import animateComponent, {handleAnimation, handleAnimation2} from "./animations";
 
 const Conteiner = styled.div`
   margin: 0;

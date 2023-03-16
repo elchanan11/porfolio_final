@@ -3,6 +3,8 @@ import {Slider} from "@mui/material";
 import SliderForServices from "./SliderForServices";
 import {mobile} from "../responsive";
 import {Element} from "react-scroll";
+import {useEffect, useRef} from "react";
+import {handleAnimation} from "./animations";
 
 
 const Conteiner = styled.div`
@@ -48,6 +50,20 @@ const SubTitle = styled.div`
 
 
 function OurServices() {
+
+    /////////////////////////////////////Animations/////////////////////////////////
+    const myComponentRef = useRef(null);
+
+    useEffect(() => {
+        const cleanup = handleAnimation(myComponentRef, 'flipY');
+
+        return () => {
+            cleanup();
+        };
+    }, []);
+/////////////////////////////////////Animations/////////////////////////////////
+
+
     return (
         <Element name="שירותים">
             <Conteiner >
@@ -55,7 +71,9 @@ function OurServices() {
                     <SubTitle>
                         שירותים
                     </SubTitle>
-                    <OurServicedTitle>
+                    <OurServicedTitle
+                        ref={myComponentRef}
+                    >
                         השירותים שלנו
                     </OurServicedTitle>
                     <SliderForServices />

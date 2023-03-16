@@ -8,6 +8,8 @@ import laptop from '../images/laptop.png'
 import {mobile} from "../responsive";
 import SliderForServices from "./SliderForServices";
 import {Element} from "react-scroll";
+import {useEffect, useRef} from "react";
+import {handleAnimation} from "./animations";
 
 
 
@@ -77,6 +79,21 @@ const ProjectImage = styled.img`
 `
 
 function Portfolio() {
+
+    /////////////////////////////////////Animations/////////////////////////////////
+    const myComponentRef = useRef(null);
+
+    useEffect(() => {
+        const cleanup = handleAnimation(myComponentRef, 'flipY');
+
+        return () => {
+            cleanup();
+        };
+    }, []);
+/////////////////////////////////////Animations/////////////////////////////////
+
+
+
     return (
         <Element name="בנינו לאחרונה">
             <Conteiner >
@@ -84,7 +101,9 @@ function Portfolio() {
                     <PortfolioTitle>
                         פורטפוליו
                     </PortfolioTitle>
-                    <Title>
+                    <Title
+                        ref={myComponentRef}
+                    >
                         טעימה קטנה :)
                     </Title>
                 </TitleContenieer>

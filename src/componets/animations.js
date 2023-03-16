@@ -1,3 +1,5 @@
+
+////////////the animation will happend each 5 sec
 export const handleAnimation = (componentRef, animationClass) => {
     let isAnimating = false;
     let animationCount = 0;
