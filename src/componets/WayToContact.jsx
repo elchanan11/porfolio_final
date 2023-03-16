@@ -27,6 +27,7 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.h3`
+  direction: rtl;
   font-style: normal;
   width: 60%;
   font-weight: 600;
@@ -63,9 +64,9 @@ function WayToContact() {
         <Conteiner >
             <Wrapper>
                 <Title>
-                    אנו מפתחים תוכנה מסוג שונה.
-                    אתה מוזמן ליצור קשר ולבקש את ה-Webel שלך
-                    פתרון IT
+                    הלקוחות שלנו לא חוששים ליצור קשר בכל שעות היום -אנחנו זמינים מבוקר עד ליל.
+                    <br/>
+                    אה, וזה חינם :)
                 </Title>
                 <ContactButton>
                     צור קשר

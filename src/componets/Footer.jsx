@@ -4,12 +4,11 @@ import {Facebook, GitHub, Mail, WhatsApp} from "@mui/icons-material";
 import {categories} from "../data";
 import logo1 from '../images/logoFooter.png'
 import logo2 from '../images/Dark Logo (1).png'
-import {mobile} from "../responsive";
+import {leptop, mobile} from "../responsive";
 
 const Conteiner = styled.div`
   margin: 0;
   padding: 0;
-  ${mobile({paddingBottom:"90px"})}
 `
 const Wrapper = styled.div`
   margin: 0;
@@ -98,11 +97,12 @@ const MiddleLogo = styled.img`
   }
 `
 const MobileMiddleLogoConteiner = styled.div`
-  width: 100%;
-  
+  display: flex;
+  justify-content: center;
+  ${leptop({display:"none"})}
 `
 const MobileMiddleLogo = styled.img`
-  width: 100%;
+  width: 150px;
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
   &:hover,&:focus {

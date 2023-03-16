@@ -15,6 +15,7 @@ const Conteiner = styled.div`
   color: #003C6A;
 `
 const TitleContenieer = styled.div`
+  direction: rtl;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,7 +82,7 @@ function Portfolio() {
                     פורטפוליו
                 </PortfolioTitle>
                 <Title>
-                    העבודה האחרונה שלי
+                    טעימה קטנה :)
                 </Title>
             </TitleContenieer>
             <ProjectsWrapper>

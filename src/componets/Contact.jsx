@@ -22,6 +22,7 @@ const TitleConteiner = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  direction: rtl;
 `
 
 const Tilte1 = styled.h1`
@@ -89,7 +90,7 @@ const Number = styled.input`
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
   &:hover,&:focus {
-    transform: scale(1.1);
+    transform: scale(1.1);/
   }
   ${mobile({width:"85%"})}
 `
@@ -137,7 +138,7 @@ function Contact() {
                         צור קשר
                     </Tilte1>
                     <Title2>
-                        צור עימנו קשר
+                        בואו נתקדם !
                     </Title2>
                 </TitleConteiner>
                 <form style={{width:"100%"}}>

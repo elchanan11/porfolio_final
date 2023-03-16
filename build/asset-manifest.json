@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0758cea6.css",
-    "main.js": "/static/js/main.8f82a8fa.js",
+    "main.js": "/static/js/main.2122e2b2.js",
     "static/media/bussinessMen_bg.png": "/static/media/bussinessMen_bg.4c3ff29a3d29556c0680.png",
     "static/media/sneakers.png": "/static/media/sneakers.fe761331477f63576e03.png",
     "static/media/singer.png": "/static/media/singer.6d207444022f1c8ffc3e.png",
@@ -9,6 +9,8 @@
     "static/media/intro_im.png": "/static/media/intro_im.5e8d5c88e6088cc3bedd.png",
     "static/media/about_us_img.png": "/static/media/about_us_img.435b32219124974b8d36.png",
     "static/media/laptop.png": "/static/media/laptop.a8f60f3628e1c573f176.png",
+    "static/media/Dark Logo (1).png": "/static/media/Dark Logo (1).d978a73eb1ace877b967.png",
+    "static/media/logoFooter.png": "/static/media/logoFooter.8ab7d9909d0458236616.png",
     "static/media/locked.png": "/static/media/locked.a284357417b9b294361e.png",
     "static/media/python.png": "/static/media/python.6a5cbc319ab3ddf8ef92.png",
     "static/media/phone.png": "/static/media/phone.a68cc1db03a36fc5a123.png",
@@ -27,10 +29,10 @@
     "static/media/html.png": "/static/media/html.e01be27ef747bd78df6a.png",
     "index.html": "/index.html",
     "main.0758cea6.css.map": "/static/css/main.0758cea6.css.map",
-    "main.8f82a8fa.js.map": "/static/js/main.8f82a8fa.js.map"
+    "main.2122e2b2.js.map": "/static/js/main.2122e2b2.js.map"
   },
   "entrypoints": [
     "static/css/main.0758cea6.css",
-    "static/js/main.8f82a8fa.js"
+    "static/js/main.2122e2b2.js"
   ]
 }

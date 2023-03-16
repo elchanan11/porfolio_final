@@ -7,7 +7,7 @@ import maintence from '../src/icons/optimize.png'
 import api from '../src/icons/api.png'
 import web from '../src/icons/mobile-app.png'
 import security from '../src/icons/locked.png'
-
+import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
 import html from '../src/lunguagesIcon/html.png'
 import css from '../src/lunguagesIcon/css.png'
 import react from '../src/lunguagesIcon/react.png'
@@ -24,28 +24,36 @@ import contactUs from '../src/navbarIcons/contactUs.png'
 import aboutUs from '../src/navbarIcons/aboutUs.png'
 import priviousJobs from '../src/navbarIcons/priviousJobs.png'
 import services from '../src/navbarIcons/services.png'
+import {
+    ConstructionSharp,
+    ContactPhoneSharp,
+    DesignServicesSharp,
+    Groups3Sharp,
+    Person,
+    WorkSharp
+} from "@mui/icons-material";
 
 
 export const categories = [
-    {
-        id:1,
-        title:"בית",
-        icon:home
-    },
+    // {
+    //     id:1,
+    //     title:"בית",
+    //     icon:home
+    // },
     {
         id:2,
         title:"עלינו",
-        icon:aboutUs
+        icon:<Groups3Sharp />
     },
     {
         id:3,
         title:"שירותים",
-        icon:services
+        icon:<DesignServicesSharp />
     },
     {
         id:4,
         title:"בנינו לאחרונה",
-        icon:priviousJobs
+        icon:<ConstructionSharp />
     },
     // {
     //     id:5,
@@ -55,7 +63,7 @@ export const categories = [
     {
         id:6,
         title:"צור קשר",
-        icon:contactUs
+        icon:<ContactPhoneSharp />
     },
 ]
 

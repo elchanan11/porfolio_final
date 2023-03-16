@@ -2,7 +2,8 @@ import styled from "styled-components";
 import logo from '../images/logo.png'
 import {categories} from "../data";
 import {leptop, mobile} from "../responsive";
-
+import {Icon, IconButton} from '@mui/material';
+import {Link} from "react-router-dom";
 const Conteiner = styled.div`
   margin: 0;
   padding: 0;
@@ -14,7 +15,8 @@ const Conteiner = styled.div`
   left: 0px;
   
   z-index: 99;
-  ${mobile({position:"fixed",bottom:"0",left:"0",top:"auto"})}
+  box-shadow: 0 2px 2px -2px  #003C6A;
+  ${mobile({position:"fixed",left:"0"})}
 `
 const Wrapper = styled.div`
   width: 100%;
@@ -68,18 +70,19 @@ const CategoryItem = styled.button`
 
 const MobileCategoryContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 7px 7px 0px 19px;
+  gap: 20px;
   ${leptop({display:"none"})}
 `;
 
-const MobileCategoryItem = styled.button`
-  width: 40px;
-  height: 40px;
+const MobileCategoryItem = styled.div`
+  width: 35px;
+  height: 35px;
   display: flex;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: 50%;
   align-items: center;
   cursor: pointer;
   border: none;
@@ -89,19 +92,22 @@ const MobileCategoryItem = styled.button`
     scale: 1.1;
     background-color: #306387;
   }
+  
 `;
-
-const Icon = styled.img`
-  width: 25px;
-  height: 25px;
-`
+//
+// const Icon = styled.img`
+//   width: 20px;
+//   height: 20px;
+//
+// `
 
 
 const Left = styled.div`
+  max-width:100px;
   display: flex;
   justify-content: flex-start;
   margin-left: 7%;
-  ${mobile({marginLeft:"3px",padding:"10px",paddingLeft:"1px",paddingRight:"1px"})}
+  ${mobile({marginLeft:"3px",padding:"5px",paddingLeft:"1px",paddingRight:"30px"})}
 `
 const Logo = styled.img`
   width: 138px;
@@ -111,6 +117,8 @@ const Logo = styled.img`
   &:hover{
     scale: 0.9;
   }
+  ${mobile({width:"100%",height:"100%"})}
+
 `
 
 function NavBar() {
@@ -137,7 +145,7 @@ function NavBar() {
                             categories.map(category=>
                                 <MobileCategoryItem key={category.id}>
                                     {
-                                        <Icon src={category.icon} alt={category.title}/>
+                                        <IconButton style={{color:"white"}}>{category.icon}</IconButton>
                                     }
                                 </MobileCategoryItem>
                             )

@@ -9,7 +9,8 @@ import {leptop, mobile} from "../responsive";
 const Conteiner = styled.div`
   margin: 0;
   padding: 0;
-  ${leptop({paddingTop:"90px"})}
+  ${leptop({marginTop:"70px"})}
+  
 `
 const Wrapper = styled.div`
   width: 100%;
@@ -20,7 +21,7 @@ const Wrapper = styled.div`
 const Right = styled.div`
   flex: 1;
   margin-right: 10%;
-  ${mobile({order: '1'})}
+  ${mobile({order: '1',position:"relative",bottom:"-70px",display:"flex", flexDirection:"column",gap:"30px"})}
 `
 
 const TextConteiner = styled.div`
@@ -41,12 +42,12 @@ const Text1 = styled.h1`
   /* identical to box height, or 125% */
   text-align: right;
   color: #FFFFFF;
-  ${mobile({fontSize: '18px'})}
+  ${mobile({fontSize: '16px'})}
 `
 
 const Text2 = styled.h2`
   /* אנו מספקים את שירותי התכנות הטובים ביותר עבורך */
-  
+  width: 90%;
   margin: 0;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -58,7 +59,7 @@ const Text2 = styled.h2`
   text-align: right;
 
   color: #FFFFFF;
-  ${mobile({fontSize: '24px' ,lineHeight:"39px", textAlign:"center" })}
+  ${mobile({fontSize: '30px' ,lineHeight:"45px", textAlign:"center" })}
 `
 
 const Text3 = styled.h2`
@@ -106,7 +107,7 @@ const ButtonContact = styled.button`
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
   &:hover,&:focus {
-    transform: scale(0.9);
+    transform: scale(1.2);
   }
   ${mobile({margin: '0' ,height:"40px",width:"110px"})}
 `
@@ -124,7 +125,7 @@ const ButtonLetsStart = styled.button`
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
   &:hover,&:focus {
-    transform: scale(0.9);
+    transform: scale(1.2);
   }
   ${mobile({margin: '0' ,height:"40px",width:"110px"})}
 
@@ -134,15 +135,16 @@ const Left = styled.div`
   flex: 1;
   background-image: url(${bgIntro});
   background-size: 80%;
-  background-position: left ;
+  
   background-repeat: no-repeat;
   background-color: #003C6A;
   display: flex;
+  background-position: calc(0% - 19px) top;
   justify-content: flex-start;
   @media (max-width: 768px) {
     background-image: url(${bgintroMobileImg});
   }
-  ${mobile({order: '2',width:"100vw",backgroundSize:"99%", backgroundPosition:"bottom left"})}
+  ${mobile({order: '2',width:"100vw",backgroundSize:"cover"})}
 `
 
 const ImageConteiner = styled.div`
@@ -151,16 +153,17 @@ const ImageConteiner = styled.div`
   width: 300px;
   margin-left: 10%;
   margin-top: 100px;
-  ${mobile({width:"100vw",height:"100%",marginLeft:"0",marginRight:"12px"})}
+  // ${mobile({width:"100vw",marginLeft:"0",marginRight:"12px",justifyContent:"center"})}
 `
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  ${mobile({marginRight:"9px"})}
+  ${mobile({marginRight:"9px",width:"250px",widths:"250px"})}
 `
 const IconConteiner = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-left: 20px;
   position: fixed;
   bottom: 10px;
@@ -168,24 +171,25 @@ const IconConteiner = styled.div`
   transform: translateY(-50%);
   z-index: 99;
   
-  ${mobile({display:"none"})}
 `
 const IconItem = styled.div`
+  width: 40px;
+  height: 40px;
   font-size: 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  margin-left: 10px;
-  padding: 7px;
-  padding-right: 0;
-  padding-top: 0;
-  background-color: inherit;
-  justify-content: space-between;
+  background-color: rgb(255, 255, 255,0.7);
   transform: scale(1.4);
   cursor: pointer;
   margin-right: 7px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 5);
+
+
   transition: transform 0.2s ease-in-out;
-  &:hover,&:focus {
+
+  &:hover, &:focus {
     transform: scale(1.7);
   }
 `
@@ -200,9 +204,9 @@ function Intro() {
                         <IconItem>
                             <WhatsApp fontSize={"large"} style={{color:"green"}}  />
                         </IconItem>
-                        <IconItem>
-                            <Mail fontSize={"large"} style={{color:"orange"}}  />
-                        </IconItem>
+                        {/*<IconItem>*/}
+                        {/*    <Mail fontSize={"large"} style={{color:"orange"}}  />*/}
+                        {/*</IconItem>*/}
                     </IconConteiner>
                     <ImageConteiner>
                         <Image src={introImg} alt={"תמונת אדם ומחשב"} />
@@ -214,11 +218,9 @@ function Intro() {
                             הגיע הזמן להתקדם
                         </Text1>
                         <Text2>
-                            אנו מספקים את שירותי התכנות הטובים ביותר עבורך
+                            {/*גלה את העוצמה בפיתוח אתר מותאם אישית לעסק שלך.                        */}
+                            בנה את אתר החלומות שלך עם העזרה שלנו
                         </Text2>
-                        <Text3>
-                            זהו פשוט טקסט דמה של תעשיית הדפוס והקביעת קלדההיה טקסט הדמה הסטנדרטי של התעשייה.
-                        </Text3>
                     </TextConteiner>
                     <ButtonConteiner>
                         <ButtonContact>
