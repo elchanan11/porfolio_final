@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import './style.css'
-import sample from '../images/myParty.png'
+import tindog from '../images/tinDod.png'
 import sneakers from '../images/sneakers.png'
 import portfolio_lam from '../images/myParty.png'
 import laptop from '../images/laptop.png'
@@ -76,7 +76,7 @@ const ProjectImageConteiner = styled.div`
 const ProjectImage = styled.img`
   width: 100%;
   height: auto;
-  transition: margin-top 1s ease-out;
+  transition: margin-top 3s ease-out;
   &:hover {
     margin-top: -${props => props.height - 165}px;
   }
@@ -98,29 +98,26 @@ function Portfolio() {
     }, []);
 /////////////////////////////////////Animations/////////////////////////////////
 
-    const imageRef1 = useRef(null);
     const [imageHeight1, setImageHeight1] = useState(0);
 
-    useEffect(() => {
-        setImageHeight1(imageRef1.current.clientHeight);
-    }, []);
+    const handleImageLoad1 = (event) => {
+        setImageHeight1(event.target.clientHeight);
+    };
 
 
 
-    const imageRef2 = useRef(null);
     const [imageHeight2, setImageHeight2] = useState(0);
 
-    useEffect(() => {
-        setImageHeight2(imageRef2.current.clientHeight);
-    }, []);
+    const handleImageLoad2 = (event) => {
+        setImageHeight2(event.target.clientHeight);
+    };
 
 
-    const imageRef3 = useRef(null);
     const [imageHeight3, setImageHeight3] = useState(0);
 
-    useEffect(() => {
-        setImageHeight3(imageRef3.current.clientHeight);
-    }, []);
+    const handleImageLoad = (event) => {
+        setImageHeight3(event.target.clientHeight);
+    };
 
 
     return (
@@ -140,8 +137,8 @@ function Portfolio() {
                     <ProjectWrapper>
                         <ProjectImageConteiner>
                             <ProjectImage
-                                src={sample}
-                                ref={imageRef1}
+                                src={portfolio_lam}
+                                onLoad={handleImageLoad1}
                                 height={imageHeight1}
                             />
                         </ProjectImageConteiner>
@@ -149,15 +146,15 @@ function Portfolio() {
                     <ProjectWrapper>
                         <ProjectImageConteiner>
                             <ProjectImage src={sneakers}
-                                           ref={imageRef2}
+                                          onLoad={handleImageLoad2}
                                           height={imageHeight2}
                             />
                         </ProjectImageConteiner>
                     </ProjectWrapper>
                     <ProjectWrapper>
                         <ProjectImageConteiner>
-                            <ProjectImage src={portfolio_lam}
-                                          ref={imageRef3}
+                            <ProjectImage src={tindog}
+                                          onLoad={handleImageLoad}
                                           height={imageHeight3}
                             />
                         </ProjectImageConteiner>

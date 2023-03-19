@@ -19,11 +19,6 @@ import nodejs from '../src/lunguagesIcon/nodejs.png'
 import mysql from '../src/lunguagesIcon/mysql.png'
 
 
-import home from '../src/navbarIcons/home.png'
-import contactUs from '../src/navbarIcons/contactUs.png'
-import aboutUs from '../src/navbarIcons/aboutUs.png'
-import priviousJobs from '../src/navbarIcons/priviousJobs.png'
-import services from '../src/navbarIcons/services.png'
 import {
     ConstructionSharp,
     ContactPhoneSharp,
