@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import bgIntro from '../images/intro_bg.png'
 import introImg from '../images/intro_im.png'
 import bgintroMobileImg from '../images/bg_im_for mobile.png'
-import {Mail, WhatsApp} from "@mui/icons-material";
+import {KeyboardArrowDown, KeyboardArrowUp, Mail, WhatsApp} from "@mui/icons-material";
 import {leptop, mobile} from "../responsive";
 import {Link} from "react-scroll";
 import './animation.css'
@@ -165,18 +165,17 @@ const Image = styled.img`
   height: 100%;
   ${mobile({marginRight:"9px",width:"250px",widths:"250px"})}
 `
-const IconConteiner = styled.div`
+const IconContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin-left: 20px;
   position: fixed;
   bottom: 10px;
-  left: -2px;
-  transform: translateY(-50%);
   z-index: 99;
+  width: 100%;
   
-`
+`;
+
 const IconItem = styled.div`
   width: 40px;
   height: 40px;
@@ -185,19 +184,30 @@ const IconItem = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: rgb(255, 255, 255,0.7);
+  background-color: initial;
   transform: scale(1.4);
   cursor: pointer;
-  margin-right: 7px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 5);
-
+  box-shadow: 0px 0px 1px white;
 
   transition: transform 0.2s ease-in-out;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     transform: scale(1.7);
   }
-`
+
+  /* Add these lines to position the first and second IconItems */
+  &:first-child {
+    margin-left: 20px;
+  }
+
+  &:last-child {
+    margin-right: 20px;
+    /* Add a transition to the opacity property */
+   
+  }
+`;
+
 
 
 function Intro() {
@@ -205,7 +215,7 @@ function Intro() {
     const myComponentRef = useRef(null);
 
     useEffect(() => {
-        const cleanup = handleAnimation(myComponentRef, 'flipX');
+        const cleanup = handleAnimation(myComponentRef, 'pop-outin');
 
         return () => {
             cleanup();
@@ -213,23 +223,51 @@ function Intro() {
     }, []);
 /////////////////////////////////////Animations/////////////////////////////////
 
+///////////////////////////for hiding the IconItem/////////////////
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.pageYOffset > 0) {
+                setIsScrolled(false);
+            } else {
+                setIsScrolled(true);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const handleScrollToTop = () => {
+        console.log("s")
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+///////////////////////////////////////////////////////////////////////
     return (
         <Conteiner >
             <Wrapper>
                 <Left>
-                    <IconConteiner>
+                    <IconContainer isScrolled={isScrolled}>
                         <IconItem>
-                            <WhatsApp fontSize={"large"} style={{color:"green"}}
-                                      onClick={()=>{
-                                          let url = `https://wa.me/message/2Y5CTJJNWWN4E1`;
-
-                                          window.open(url);}}
+                            <WhatsApp
+                                fontSize={"large"}
+                                style={{ color: "green" }}
+                                onClick={() => {
+                                    let url = `https://wa.me/message/2Y5CTJJNWWN4E1`;
+                                    window.open(url);
+                                }}
                             />
                         </IconItem>
-                        {/*<IconItem>*/}
-                        {/*    <Mail fontSize={"large"} style={{color:"orange"}}  />*/}
-                        {/*</IconItem>*/}
-                    </IconConteiner>
+                        {!isScrolled && (
+                            <IconItem onClick={handleScrollToTop}>
+                                <KeyboardArrowUp fontSize="large" style={{ color: "black" }} />
+                            </IconItem>
+                        )}
+                    </IconContainer>
+
                     <ImageConteiner>
                         <Image src={introImg} alt={"תמונת אדם ומחשב"} />
                     </ImageConteiner>
@@ -240,7 +278,7 @@ function Intro() {
                             הגיע הזמן להתקדם
                         </Text1>
                         <Text2
-                            ref={myComponentRef}
+                            // ref={myComponentRef}
                         >
                             {/*גלה את העוצמה בפיתוח אתר מותאם אישית לעסק שלך.                        */}
                             בנה את אתר החלומות שלך עם העזרה שלנו

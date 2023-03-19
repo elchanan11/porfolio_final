@@ -8,16 +8,17 @@ import SliderForServices from "./SliderForServices";
 import {useState} from "react";
 
 const Conteiner = styled.div`
+  
   margin: 0;
   padding: 0;
   width: 100%;
   background: #FFFFFF;
-  
+  z-index: 2147483647;
+
   position: fixed;
   top: 0px;
   left: 0px;
   
-  z-index: 99;
   box-shadow: 0 2px 2px -2px  #003C6A;
   ${mobile({position:"fixed",left:"0"})}
 `

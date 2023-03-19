@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.0758cea6.css",
-    "main.js": "/static/js/main.6c111447.js",
+    "main.css": "/static/css/main.d8f2fb8e.css",
+    "main.js": "/static/js/main.82098811.js",
     "static/media/bussinessMen_bg.png": "/static/media/bussinessMen_bg.4c3ff29a3d29556c0680.png",
-    "static/media/sneakers.png": "/static/media/sneakers.fe761331477f63576e03.png",
-    "static/media/singer.png": "/static/media/singer.6d207444022f1c8ffc3e.png",
-    "static/media/myParty.png": "/static/media/myParty.0f92a704e539ccdff3c1.png",
+    "static/media/sneakers.png": "/static/media/sneakers.da88823f2e7f98e6b350.png",
+    "static/media/myParty.png": "/static/media/myParty.8863a14e4e40ac8c0d65.png",
     "static/media/intro_im.png": "/static/media/intro_im.5e8d5c88e6088cc3bedd.png",
     "static/media/about_us_img.png": "/static/media/about_us_img.435b32219124974b8d36.png",
     "static/media/laptop.png": "/static/media/laptop.a8f60f3628e1c573f176.png",
@@ -28,11 +27,11 @@
     "static/media/bg_im_for mobile.png": "/static/media/bg_im_for mobile.763c0cc67692cd51394a.png",
     "static/media/html.png": "/static/media/html.e01be27ef747bd78df6a.png",
     "index.html": "/index.html",
-    "main.0758cea6.css.map": "/static/css/main.0758cea6.css.map",
-    "main.6c111447.js.map": "/static/js/main.6c111447.js.map"
+    "main.d8f2fb8e.css.map": "/static/css/main.d8f2fb8e.css.map",
+    "main.82098811.js.map": "/static/js/main.82098811.js.map"
   },
   "entrypoints": [
-    "static/css/main.0758cea6.css",
-    "static/js/main.6c111447.js"
+    "static/css/main.d8f2fb8e.css",
+    "static/js/main.82098811.js"
   ]
 }

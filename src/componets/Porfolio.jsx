@@ -3,12 +3,12 @@ import './style.css'
 import phone from '../images/phone.png'
 import sample from '../images/myParty.png'
 import sneakers from '../images/sneakers.png'
-import singer from '../images/singer.png'
+import portfolio_lam from '../images/myParty.png'
 import laptop from '../images/laptop.png'
 import {mobile} from "../responsive";
 import SliderForServices from "./SliderForServices";
 import {Element} from "react-scroll";
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import {handleAnimation} from "./animations";
 
 
@@ -43,6 +43,7 @@ const Title = styled.h2`
   ${mobile({fontSize:"33px", textAlign:"center"})}
 `
 
+
 const ProjectsWrapper = styled.div`
   margin: 0;
   display: flex;
@@ -53,7 +54,7 @@ const ProjectsWrapper = styled.div`
     background: linear-gradient(to bottom, white , #003C6A 65%);
   }
   ${mobile({flexDirection:"column", textAlign:"center"})}
-`
+`;
 
 const ProjectWrapper = styled.div`
   height: 350px;
@@ -63,20 +64,26 @@ const ProjectWrapper = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-`
+`;
 const ProjectImageConteiner = styled.div`
   height: 165px;
   width: 263px;
   position: absolute;
   top: 75px;
   left: 40px;
-`
+  overflow: hidden; /* Hide the portion of the image outside the container */
+`;
+
 const ProjectImage = styled.img`
   width: 100%;
-  height: 100%;
-  
-  
-`
+  height: auto;
+  transition: margin-top 1s ease-out;
+  &:hover {
+    margin-top: -${props => props.height - 165}px;
+  }
+`;
+
+
 
 function Portfolio() {
 
@@ -92,6 +99,29 @@ function Portfolio() {
     }, []);
 /////////////////////////////////////Animations/////////////////////////////////
 
+    const imageRef1 = useRef(null);
+    const [imageHeight1, setImageHeight1] = useState(0);
+
+    useEffect(() => {
+        setImageHeight1(imageRef1.current.clientHeight);
+    }, []);
+
+
+
+    const imageRef2 = useRef(null);
+    const [imageHeight2, setImageHeight2] = useState(0);
+
+    useEffect(() => {
+        setImageHeight2(imageRef2.current.clientHeight);
+    }, []);
+
+
+    const imageRef3 = useRef(null);
+    const [imageHeight3, setImageHeight3] = useState(0);
+
+    useEffect(() => {
+        setImageHeight3(imageRef3.current.clientHeight);
+    }, []);
 
 
     return (
@@ -102,7 +132,7 @@ function Portfolio() {
                         פורטפוליו
                     </PortfolioTitle>
                     <Title
-                        ref={myComponentRef}
+                        // ref={myComponentRef}
                     >
                         טעימה קטנה :)
                     </Title>
@@ -110,17 +140,27 @@ function Portfolio() {
                 <ProjectsWrapper>
                     <ProjectWrapper>
                         <ProjectImageConteiner>
-                            <ProjectImage src={sample}/>
+                            <ProjectImage
+                                src={sample}
+                                ref={imageRef1}
+                                height={imageHeight1}
+                            />
                         </ProjectImageConteiner>
                     </ProjectWrapper>
                     <ProjectWrapper>
                         <ProjectImageConteiner>
-                            <ProjectImage src={sneakers}/>
+                            <ProjectImage src={sneakers}
+                                           ref={imageRef2}
+                                          height={imageHeight2}
+                            />
                         </ProjectImageConteiner>
                     </ProjectWrapper>
                     <ProjectWrapper>
                         <ProjectImageConteiner>
-                            <ProjectImage src={singer}/>
+                            <ProjectImage src={portfolio_lam}
+                                          ref={imageRef3}
+                                          height={imageHeight3}
+                            />
                         </ProjectImageConteiner>
                     </ProjectWrapper>
                 </ProjectsWrapper>

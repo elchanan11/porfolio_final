@@ -169,7 +169,7 @@ function Contact() {
     const myComponentRef = useRef(null);
 
     useEffect(() => {
-        const cleanup = handleAnimation(myComponentRef, 'flipX');
+        const cleanup = handleAnimation(myComponentRef, 'pop-outin');
 
         return () => {
             cleanup();
@@ -204,13 +204,15 @@ function Contact() {
     }
 
     return (
-        <Element name="צור קשר">
+
             <Conteiner >
                 <Wrapper>
                     <TitleConteiner>
-                        <Tilte1>
-                            צור קשר
-                        </Tilte1>
+                        <Element name="צור קשר">
+                            <Tilte1>
+                                צור קשר
+                            </Tilte1>
+                        </Element>
                         <Title2
                             ref={myComponentRef}
                         >
@@ -246,7 +248,6 @@ function Contact() {
                 </Wrapper>
 
             </Conteiner>
-        </Element>
     );
 }
 

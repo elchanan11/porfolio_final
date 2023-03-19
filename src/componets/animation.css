@@ -32,7 +32,7 @@
 }
 
 .flipX {
-    animation: 3s anim-flipX ease ;
+    animation: 6s anim-flipX ease ;
 }
 @keyframes anim-flipX {
     0% {
@@ -86,7 +86,7 @@
 
 /* lineup class and keyframes */
 .lineUp {
-    animation: 2s anim-lineUp ease-out ;
+    animation: 5s anim-lineUp ease-out ;
     animation-iteration-count: 1;
 }
 @keyframes anim-lineUp {

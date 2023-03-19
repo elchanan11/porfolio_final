@@ -4,7 +4,6 @@ import {mobile} from "../responsive";
 import {Element, Link} from "react-scroll";
 import {useEffect, useRef, useState} from "react";
 import './animation.css'
-import animateComponent, {handleAnimation, handleAnimation2} from "./animations";
 
 const Conteiner = styled.div`
   margin: 0;
@@ -117,12 +116,83 @@ function Home() {
     const myComponentRef = useRef(null);
 
     useEffect(() => {
-        const cleanup = handleAnimation(myComponentRef, 'flipX');
+        const cleanup = handleAnimation(myComponentRef, 'flipY');
 
         return () => {
             cleanup();
         };
     }, []);
+
+    const myComponentRef2 = useRef(null);
+
+    useEffect(() => {
+        const cleanup2 = handleAnimation(myComponentRef2, 'lineUp');
+
+        return () => {
+            cleanup2();
+        };
+    }, []);
+
+
+////////////the animation will happend each 30000 sec
+     const handleAnimation = (componentRef, animationClass, minAnimationInterval) => {
+        let isAnimating = false;
+        let lastAnimationTime = null;
+        let interval = null;
+
+        const handleScroll = () => {
+            const element = componentRef.current;
+            if (element) {
+                const { top, bottom } = element.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                if (top < windowHeight && bottom > 0) {
+                    const now = Date.now();
+                    if (!isAnimating || (lastAnimationTime && now - lastAnimationTime >= minAnimationInterval)) {
+                        isAnimating = true;
+                        lastAnimationTime = now;
+                        element.classList.add(animationClass);
+                        interval = setInterval(() => {
+                            element.classList.toggle(animationClass);
+                            element.classList.toggle(animationClass + '-reverse');
+                        }, 30000);
+                    }
+                } else {
+                    clearInterval(interval);
+                    isAnimating = false;
+                    element.classList.remove(animationClass);
+                    element.classList.remove(animationClass + '-reverse');
+                }
+            }
+        };
+
+        const handleFocus = () => {
+            const element = componentRef.current;
+            if (element && !isAnimating) {
+                isAnimating = true;
+                lastAnimationTime = Date.now();
+                element.classList.add(animationClass);
+                interval = setInterval(() => {
+                    element.classList.toggle(animationClass);
+                    element.classList.toggle(animationClass + '-reverse');
+                }, 30000);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('focusin', handleFocus);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('focusin', handleFocus);
+            clearInterval(interval);
+            isAnimating = false;
+            lastAnimationTime = null;
+        };
+    };
+
+
+
 /////////////////////////////////////Animations/////////////////////////////////
 
 
@@ -136,11 +206,13 @@ function Home() {
                         </AboutUs>
                     </Element>
                     <Title id="my-component"
-                           ref={myComponentRef}
+                           // ref={myComponentRef}
                           >
                           מה זה Webel ?
                     </Title>
-                    <Desc>
+                    <Desc
+                        // ref={myComponentRef}
+                    >
                         Webel הוקמה על ידי מפתח ומעצב אתרים נלהב שאהב את התעשייה מאז ילדותו. התשוקה שלנו היא ליצור אתרי אינטרנט יפים ומקצועיים אשר עולים על ציפיות הלקוחות שלנו. אנו עובדים בשיתוף פעולה הדוק עם כל לקוח כדי להבין את הצרכים והמטרות הייחודיות שלו, ולאחר מכן מתאימים את השירותים שלנו בהתאם. בין אם אתה בעל עסק קטן או תאגיד גדול, אנו מחויבים לספק שירות אמין,מקצועי ואישי העונה על הצרכים הספציפיים שלך.<br/> ב-Webel, ההתמקדות שלנו היא תמיד במתן הרמה הגבוהה ביותר של איכות ושביעות רצון הלקוחות. אנו מאמינים בבניית קשרים ארוכי טווח עם לקוחותינו, ואנו מחויבים לעזור להם להשיג את המטרות המקוונות שלהם.                    </Desc>
                     <Link
                         activeClass="active"
