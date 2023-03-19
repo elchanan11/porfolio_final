@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import './style.css'
-import phone from '../images/phone.png'
 import sample from '../images/myParty.png'
 import sneakers from '../images/sneakers.png'
 import portfolio_lam from '../images/myParty.png'
