@@ -12,6 +12,9 @@ import logo from "../images/logo.png";
 const Conteiner = styled.div`
   margin: 0;
   padding: 0;
+  z-index: 199;
+  position: relative;
+  bottom: 0;
 `
 const Wrapper = styled.div`
   margin: 0;
