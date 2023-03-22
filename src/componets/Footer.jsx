@@ -295,7 +295,7 @@ function Footer() {
                                 </MiddleLogoConteiner>
                             </Link>
                             <MiddleText>
-                                , נשמע קצת דפוק, אבל כל המילים האלו הם פשוט מילים אקראיות בעברית שכתבתי בלי שום משמעות מיוחדת.
+                                Webel - בניית אתרים חדשניים וחוויות דיגיטליות כדי לעזור לעסק שלך לצמוח. בואו ניצור משהו גדול ביחד!
                             </MiddleText>
                         </MiddleRight>
                         <MobileMiddleLogoConteiner>

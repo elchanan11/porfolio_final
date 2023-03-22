@@ -19,9 +19,7 @@ const SwipeWrapper = styled.div`
   justify-content: space-between;
   flex-direction: column;
 
-  &:hover {
-    background: #d77f7f;
-  }
+ 
 `
 const Top = styled.div`
   height: 125px;

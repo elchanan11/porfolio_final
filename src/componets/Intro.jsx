@@ -177,25 +177,22 @@ const IconContainer = styled.div`
 `;
 
 const IconItem = styled.div`
-  width: 40px;
-  height: 40px;
-  font-size: 10px;
+  height: 45px;
+  width: 45px;
+  margin: 0 12px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: #306387;
+  color: #FFFFFF;
   border-radius: 50%;
-  background-color: initial;
-  transform: scale(1.4);
+  box-shadow: 0 0 3px white;
+  transition: transform 0.1s ease-in-out;
   cursor: pointer;
-  box-shadow: 0px 0px 1px white;
 
-  transition: transform 0.2s ease-in-out;
-
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     transform: scale(1.7);
   }
-
   /* Add these lines to position the first and second IconItems */
   &:first-child {
     margin-left: 20px;
@@ -254,7 +251,7 @@ function Intro() {
                         <IconItem>
                             <WhatsApp
                                 fontSize={"large"}
-                                style={{ color: "green" }}
+                                style={{ color: "white" }}
                                 onClick={() => {
                                     let url = `https://wa.me/message/2Y5CTJJNWWN4E1`;
                                     window.open(url);
@@ -263,7 +260,7 @@ function Intro() {
                         </IconItem>
                         {!isScrolled && (
                             <IconItem onClick={handleScrollToTop}>
-                                <KeyboardArrowUp fontSize="large" style={{ color: "black" }} />
+                                <KeyboardArrowUp fontSize="large" style={{ color: "white" }} />
                             </IconItem>
                         )}
                     </IconContainer>

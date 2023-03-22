@@ -177,13 +177,13 @@ function Contact() {
     }, []);
 /////////////////////////////////////Animations/////////////////////////////////
 
-    const [formData, setFormData] = useState({ name: '', tel: '', message: '' });
+    const [formData, setFormData] = useState({ name: '', telephone: '', message: '' });
 
     const handleInputChange = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
     };
 
-    const [state, handleSubmit] = useForm("mrgvlvbv");
+    const [state, handleSubmit] = useForm("xdovlawq");
     if (state.succeeded) {
         return (
             <Element name="צור קשר">
@@ -227,10 +227,10 @@ function Contact() {
                                 field="name"
                                 errors={state.errors}
                             />
-                            <Number required id={"tel"}  type={"phone"} placeholder={"מספר טלפון"} />
+                            <Number required id={"telephone"} name="telephone"  type={"telephone"} placeholder={"מספר טלפון"} />
                             <ValidationError
-                                prefix="Tel"
-                                field="tel"
+                                prefix="TELEPHONE"
+                                field="telephone"
                                 errors={state.errors}
                             />
                             <Text id={"message"} type={"message"} placeholder={"על מה נדבר ?"} name="message" />
